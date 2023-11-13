@@ -4,6 +4,36 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <bean id="emp" class="Containers.Employee">
-
+        <property name="id" value="20"></property>
+        <property name="name" value="Rasha"></property>
+        <property name="salary" value="7300"></property>
+        <property name="department" ref="dept"></property>
+        <property name="address">
+            <list>
+                <value>Ankara</value>
+                <value>Istanbul</value>
+<!--                or we can use refs if the list type is not string-->
+<!--                <ref bean="answer1"/>-->
+<!--                <ref bean="answer2"/>-->
+            </list>
+        </property>
+        <property name="books">
+            <list>
+                <ref bean="book1"/>
+                <ref bean="book2"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="dept" class="Containers.Department">
+        <property name="id" value="1"></property>
+        <property name="name" value="IT"></property>
+    </bean>
+    <bean id="book1" class="Containers.Book">
+        <property name="id" value="1"></property>
+        <property name="name" value="Example1"></property>
+    </bean>
+    <bean id="book2" class="Containers.Book">
+        <property name="id" value="2"></property>
+        <property name="name" value="Example2"></property>
     </bean>
 </beans>

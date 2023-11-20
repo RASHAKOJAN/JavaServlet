@@ -18,6 +18,22 @@ public class Employee {
     // There are two ways to perform Dependency Injection in Spring framework:
     // The first one is by Constructor and  the last one is by Setter Methods
 
+    // to achieve Dependency Lookup approach we get the resource after demand by
+    //new Object Or Static method
+
+
+    public Employee() {
+    }
+
+    public Employee(Long id, String name, Double salary, Department department, List<String> address, List<Book> books) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.department = department;
+        this.address = address;
+        this.books = books;
+    }
+
     public Long getId() {
         return id;
     }

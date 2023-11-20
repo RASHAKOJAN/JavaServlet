@@ -19,7 +19,16 @@ public class IocContainer {
         //ApplicationContext  -- more functionality built on top of the BeanFactory interface
         // method of implementation FileSystemXmlApplicationContext(locate from anywhere)- ClassPathXmlApplicationContext - WebXmlApplicationContext
         /*ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Employee employee2 = (Employee) applicationContext.getBean("emp");
+
+        -- when singleton in the first and second time name field will not be null
+        this will be when name property in bean not defined
+        but in prototype the name field will be the last name we set it will be the same in every project instance
+        Employee emp1 = (Employee) applicationContext.getBean("emp");
+        emp1.setName("Rasha");
+        Employee emp2 = (Employee) applicationContext.getBean("emp");
+
+        emp1.printMethod();
+        emp2.printMethod();
 
         employee2.printMethod();*/
     }

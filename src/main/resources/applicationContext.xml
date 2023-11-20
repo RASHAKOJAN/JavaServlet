@@ -4,9 +4,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <!--&#45;&#45; without using constructor-->
+    <!--Spring - Bean Scopes
+    1- Singleton: the container creates a single instance of that bean so all requests for that bean name will return the same object from,
+    which is cached (default)
+    2- Prototype: A bean return a different instance every time it is requested from the container
 
-    <bean id="emp" class="Containers.Employee">
+    &#45;&#45; Web aware:
+    3-Request: This scopes a bean definition to an HTTP request.
+    4-Session: This scopes a bean definition to an HTTP session.
+    5-Global Session:This scopes a bean definition to a global HTTP session.-->
+
+    <bean id="emp" class="Containers.Employee" scope="singleton">  <!--scope="singleton" or scope="prototype"-->
         <property name="id" value="20"></property>
         <property name="name" value="Rasha"></property>
         <property name="salary" value="7300"></property>
@@ -27,27 +35,6 @@
             </list>
         </property>
     </bean>
-
-    <!--dependency injection with constructor-->
-
-    <!--<bean id="emp" class="Containers.Employee">
-        <constructor-arg value="20" type="java.lang.Long"></constructor-arg>
-        <constructor-arg value="rasha" type="java.lang.String"></constructor-arg>
-        <constructor-arg value="2000" type="java.lang.Double"></constructor-arg>
-        <constructor-arg ref="dept" type="Containers.Department"></constructor-arg>
-        <constructor-arg type="java.util.List">
-            <list>
-                <value>Ankara</value>
-                <value>Istanbul</value>
-            </list>
-        </constructor-arg>
-        <constructor-arg>
-            <list>
-                <ref bean="book1"/>
-                <ref bean="book2"/>
-            </list>
-        </constructor-arg>
-    </bean>-->
 
     <bean id="dept" class="Containers.Department">
         <property name="id" value="1"></property>

@@ -25,6 +25,15 @@ public class Employee {
     public Employee() {
     }
 
+    // call this method in bean init-method="init" destroy-method="destroy"
+    public void init(){
+        System.out.println("initialize method Employee class");
+    }
+
+    public void destroy(){
+        System.out.println("destroy method Employee class");
+    }
+
     public Employee(Long id, String name, Double salary, Department department, List<String> address, List<Book> books) {
         this.id = id;
         this.name = name;

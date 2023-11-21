@@ -14,7 +14,7 @@
     4-Session: This scopes a bean definition to an HTTP session.
     5-Global Session:This scopes a bean definition to a global HTTP session.-->
 
-    <bean id="emp" class="Containers.Employee" scope="singleton">  <!--scope="singleton" or scope="prototype"-->
+    <bean id="emp" class="Containers.Employee" scope="singleton" init-method="init" destroy-method="destroy">  <!--scope="singleton" or scope="prototype"-->
         <property name="id" value="20"></property>
         <property name="name" value="Rasha"></property>
         <property name="salary" value="7300"></property>
@@ -36,6 +36,10 @@
         </property>
     </bean>
 
+    <!--BeanLifeCycle-->
+
+    <bean id="BeanLifeCycle" class="Initialize.BeanLifeCycle"></bean>
+
     <bean id="dept" class="Containers.Department">
         <property name="id" value="1"></property>
         <property name="name" value="IT"></property>
@@ -46,6 +50,6 @@
     </bean>
     <bean id="book2" class="Containers.Book">
         <property name="id" value="2"></property>
-        <property name="name" value="Example2"></property>
+        <property name="name" value="Book2"></property>
     </bean>
 </beans>

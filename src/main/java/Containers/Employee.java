@@ -1,5 +1,10 @@
 package Containers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Required;
+
+import javax.annotation.PreDestroy;
 import java.util.List;
 
 public class Employee {
@@ -10,6 +15,8 @@ public class Employee {
     private String name;
     private Double salary;
     private Department department;
+
+    private Department department2;
 
     private List<String> address;
 
@@ -63,6 +70,7 @@ public class Employee {
         return salary;
     }
 
+    @Required
     public void setSalary(Double salary) {
         this.salary = salary;
     }
@@ -71,6 +79,8 @@ public class Employee {
         return department;
     }
 
+    @Autowired
+    @Qualifier("dept")
     public void setDepartment(Department department) {
         this.department = department;
     }
@@ -90,6 +100,21 @@ public class Employee {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
+
+    public Department getDepartment2() {
+        return department2;
+    }
+
+    @Autowired
+    @Qualifier("dept2")
+    public void setDepartment2(Department department2) {
+        this.department2 = department2;
+    }
+
+    /*@PreDestroy
+    public void preDestroy(){
+        System.out.println("preDestroy");
+    }*/
 
     public void printMethod(){
         System.out.println("Employee Name:" + this.name + "ID:" + this.id);

@@ -44,6 +44,11 @@
         <property name="id" value="1"></property>
         <property name="name" value="IT"></property>
     </bean>
+
+    <bean id="dept2" class="Containers.Department">
+        <property name="id" value="1"></property>
+        <property name="name" value="IT"></property>
+    </bean>
     <bean id="book1" class="Containers.Book">
         <property name="id" value="1"></property>
         <property name="name" value="Example1"></property>
